@@ -1,0 +1,15 @@
+<view class="page-body">
+  <view class="page-body-wrapper">
+    <camera device-position="front" flash="off" binderror="error" style="width: 100%; height:{{CameraHeight}}px;"></camera>
+    <view class="btn-area">
+      <button type="primary" bindtap="login">登录</button>
+    </view>
+    <view class="btn-area">
+      <button type="primary" bindtap="check">录入</button>
+    </view>
+    <van-button type="primary">按钮</van-button>
+    <van-button type="primary">按钮</van-button>
+    <image wx:if="{{src}}" mode="widthFix" src="{{src}}"></image>
+    <video wx:if="{{videoSrc}}" class="video" src="{{videoSrc}}"></video>
+  </view>
+</view>

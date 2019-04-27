@@ -1,0 +1,15 @@
+/* pages/create/field.wxss */
+
+page {
+  background: #f2f3f5;
+}
+
+.tip {
+  margin-left: 10px;
+  margin-top: 5px;
+  display: -webkit-flex;
+  display: flex;
+  height: 24px;
+  font-size: 16px;
+  align-items: center;
+}

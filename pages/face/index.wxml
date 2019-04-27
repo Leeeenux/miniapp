@@ -1,0 +1,3 @@
+<!--pages/face/index.wxml-->
+<button bindtap='face'>face</button>
+<button bindtap='takePhoto'>face</button>

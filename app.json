@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/attendance/index",
+    "pages/face/index",
+    "pages/logs/logs",
+    "pages/attendance/result",
+    "pages/create/index",
+    "pages/create/result",
+    "pages/create/alert",
+    "pages/create/field",
+    "pages/location/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于课程签到"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

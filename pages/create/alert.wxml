@@ -1,0 +1,2 @@
+<!--pages/create/alert.wxml-->
+<text>{{ImageBase64}}</text>

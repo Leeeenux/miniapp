@@ -1,0 +1,35 @@
+<van-notice-bar mode="closeable" text="{{notice}}" />
+<van-cell-group>
+  <view>
+    <van-field value="{{name}}" label="姓名" disabled left-icon="contact" border="{{ true }}" />
+  </view>
+  <view style='margin-top:10px;'>
+    <van-field value="{{className}}" label="班级" disabled left-icon="friends-o" border="{{ true }}" />
+  </view>
+  <view style='margin-top:10px;'>
+    <van-field value="{{studentId}}" label="学号" disabled left-icon="manager-o" border="{{ true }}" />
+  </view>
+</van-cell-group>
+<view style='margin-top:10px;'>
+  <van-panel title="人脸信息" use-footer-slot>
+    <image src='{{src}}' style='width:{{ImageWidth}}px;height:{{ImageHeight}}px;margin-left:{{windowWidth*0.25}}px;margin-top:20px;margin-bottom:20px;' bindload='ImageOnload'></image>
+    <view slot="footer">
+      <van-row gutter="20">
+        <van-col span="12">
+          <van-button size="large" bindtap='submit' type="primary">提交</van-button>
+        </van-col>
+        <van-col span="12">
+          <van-button size="large" bindtap='remake'>重拍</van-button>
+        </van-col>
+      </van-row>
+    </view>
+  </van-panel>
+</view>
+<van-cell-group>
+  <view>
+    <van-field value="{{longitude}}" label="姓名" disabled left-icon="contact" border="{{ true }}" />
+  </view>
+  <view>
+  <van-field value="{{latitude}}" label="姓名" disabled left-icon="contact" border="{{ true }}" />
+  </view>
+</van-cell-group>
