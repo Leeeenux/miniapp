@@ -1,4 +1,5 @@
 <!--pages/index/login.wxml-->
+<van-toast id="van-toast" />
 <view class='login-box'>
   <view style='margin-top:20px;'>
     <van-row>

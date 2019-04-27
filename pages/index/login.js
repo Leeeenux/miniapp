@@ -1,11 +1,13 @@
 // pages/index/login.js
+import Toast from '../../dist/toast/toast';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    username:'',
+    password:''
   },
 
   /**
@@ -26,15 +28,32 @@ Page({
   },
   login:function(){
     var that = this
-    wx.request({
-      url: 'http://192.168.199.101/user/login',
-      data: {
-        username: this.data.username,
-        password: this.data.password
-      },
-      success(res) {
-        console.log(res.data)
-      }
-    })
+    if (this.data.username != '' && this.data.password!=''){
+      wx.request({
+        url: 'http://192.168.199.101/user/login',
+        data: {
+          username: this.data.username,
+          password: this.data.password
+        },
+        success(res) {
+          if (res.data.success) {
+            Toast.success(res.data.msg);
+            wx.setStorage({
+              key: 'studentId',//查看缓存里是否有studentId
+              data: that.data.username,
+              success: function (res) {
+                wx.redirectTo({
+                  url: 'home'
+                })
+              }
+            })
+          } else {
+            Toast.fail(res.data.msg);
+          }
+        }
+      })
+    }else{
+      Toast("请输入账号密码");
+    }
   }
 })

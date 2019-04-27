@@ -32,6 +32,17 @@ App({
         }
       }
     })
+    wx.getStorage({
+      key: 'studentId',
+      success: function (res) {
+        console.log(res)
+      },
+      fail: function (res) {
+        wx.redirectTo({
+          url: 'login'
+        })
+      }
+    })
   },
   globalData: {
     userInfo: null
