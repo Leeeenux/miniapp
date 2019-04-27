@@ -45,6 +45,7 @@ Page({
               data: {
                 base64: res.data,
                 studentid: '1507052316',
+                classId:'101',
                 longitude: this.data.longitude,
                 latitude: this.data.latitude
               },

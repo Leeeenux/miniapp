@@ -9,7 +9,8 @@
     "pages/create/result",
     "pages/create/alert",
     "pages/create/field",
-    "pages/location/index"
+    "pages/location/index",
+    "pages/index/login"
   ],
   "window": {
     "backgroundTextStyle": "light",

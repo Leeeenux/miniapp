@@ -1,0 +1,8 @@
+/* pages/index/login.wxss */
+.input{
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius:10em;
+  background-color: #f0f0f0;
+}
