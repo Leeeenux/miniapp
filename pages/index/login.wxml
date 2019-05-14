@@ -2,11 +2,8 @@
 <van-toast id="van-toast" />
 <view class='login-box'>
   <view style='margin-top:20px;'>
-    <van-row>
-      <van-col span="16" offset="4">
-        LOGO
-      </van-col>
-    </van-row>
+    <image src='../../assets/logo.gif'></image>
+    居中还没处理
   </view>
   <view style='margin-top:20px;'>
     <van-row>
@@ -25,7 +22,7 @@
   <view style='margin-top:40px;'>
     <van-row>
       <van-col span="16" offset="4">
-        <van-button wx:if='{{!isLoading}}' style='height:50px' class='verify-btn' round="true" type="info" size="large" bindtap='login'>登录</van-button>
+        <van-button wx:if='{{!isLoading}}' style='height:50px' class='verify-btn' round="true" type="info" size="large" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap='login'>登录</van-button>
         <!-- <van-button wx:if='{{isLoading}}' style='height:50px' class='verify-btn' type="info" size="large" loading loading-text="人脸识别中..." r bindtap='SignClick'>一键签到</van-button> -->
       </van-col>
     </van-row>

@@ -44,8 +44,8 @@
 				{
 					"id": 0,
 					"name": "签到页面",
-					"pathName": "pages/index/login",
-					"query": "",
+					"pathName": "pages/attendance/index",
+					"query": "studentId=1507052316&classId=101",
 					"scene": null
 				},
 				{

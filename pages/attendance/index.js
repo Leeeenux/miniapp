@@ -6,15 +6,18 @@ Page({
     CameraShow: false,
     notice:'点击“一键签到”后请保持头部置于镜头中央保持3s不动'
   },
-  onLoad(){
+  onLoad: function (options){
     var that = this
+    console.log(options)
     this.ctx = wx.createCameraContext()
     wx.getLocation({
       type: 'wgs84',
       success(res) {
         that.setData({
           latitude : res.latitude,
-          longitude : res.longitude
+          longitude : res.longitude,
+          studentId: options.studentId,
+          classId: options.classId
         })
       }
     })
@@ -44,8 +47,8 @@ Page({
               url: 'http://192.168.199.101/face/signin',
               data: {
                 base64: res.data,
-                studentid: '1507052316',
-                classId:'101',
+                studentId: this.data.studentId,
+                classId: this.data.classId,
                 longitude: this.data.longitude,
                 latitude: this.data.latitude
               },

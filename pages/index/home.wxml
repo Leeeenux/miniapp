@@ -1,2 +1,2 @@
-<!--pages/index/home.wxml-->
-<text>pages/index/home.wxml</text>
+<image src='../../assets/logo.gif'></image>
+<button>签到</button>

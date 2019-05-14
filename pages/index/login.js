@@ -1,4 +1,6 @@
 // pages/index/login.js
+const app = getApp()
+
 import Toast from '../../dist/toast/toast';
 Page({
 
@@ -14,7 +16,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
+  },
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
   },
   userNameInput:function(e){
     this.setData({
