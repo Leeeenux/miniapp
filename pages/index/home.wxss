@@ -1,1 +1,5 @@
 /* pages/index/home.wxss */
+.func-btn {
+  width: 150px;
+  height: 100px;
+}

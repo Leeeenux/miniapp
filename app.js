@@ -2,6 +2,7 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
+    var that = this
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
@@ -32,15 +33,10 @@ App({
         }
       }
     })
-    wx.getStorage({
-      key: 'studentId',
-      success: function (res) {
-        console.log(res)
-      },
-      fail: function (res) {
-        wx.redirectTo({
-          url: 'login'
-        })
+    wx.getSystemInfo({
+      success(res) {
+        that.globalData.windowWidth = res.windowWidth
+        that.globalData.windowHeight = res.windowHeight
       }
     })
   },

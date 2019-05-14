@@ -1,12 +1,15 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<swiper>
 
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">当前课程</text>
-  </view>
+</swiper>
+<view class="userinfo">
+
+  <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+  <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+
+</view>
+
+<text class="user-motto">当前课程</text>
+<view>
+
 </view>

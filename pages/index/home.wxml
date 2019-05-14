@@ -1,2 +1,23 @@
-<image src='../../assets/logo.gif'></image>
-<button>签到</button>
+<view>
+<view style='margin-top:80px;'>
+<image src='../../assets/logo.png' style='width:{{windowWidth*0.70}}px;height:{{windowWidth*0.15}}px;margin-left:{{windowWidth*0.15}}px;'></image>
+</view>
+  <!-- <view style='margin-left:{{windowWidth*0.03}}px;'>
+    你好，{{studentName}}
+  </view> -->
+  <view style='margin-top:10px;'>
+    <image style='width:{{windowWidth*0.455}}px;height:{{windowWidth*0.255}}px;margin-left:{{windowWidth*0.03}}px;border-radius:5px;' src='../../assets/qiandao.png' bindtap='signClick'></image>
+    <image style='width:{{windowWidth*0.455}}px;height:{{windowWidth*0.255}}px;margin-left:{{windowWidth*0.03}}px;border-radius:5px;' src='../../assets/luru.png' bindtap='faceClick'></image>
+  </view>
+  <view style='margin-top:10px;'>
+    <image style='width:{{windowWidth*0.455}}px;height:{{windowWidth*0.255}}px;margin-left:{{windowWidth*0.03}}px;border-radius:5px;' src='../../assets/qingjia.png' bindtap='atdClick'></image>
+    <image style='width:{{windowWidth*0.455}}px;height:{{windowWidth*0.255}}px;margin-left:{{windowWidth*0.03}}px;border-radius:5px;' src='../../assets/chaxun.png' bindtap='faceClick'></image>
+  </view>
+  <view style='margin-top:10px;'>
+    <swiper autoplay="true" interval="3000" duration="1000" style='width:{{windowWidth*0.94}}px;height:{{windowWidth*0.399}}px;margin-left:{{windowWidth*0.03}}px;'>
+      <swiper-item style='width:{{windowWidth*0.94}}px;height:{{windowWidth*0.399}}px;border-radius:5px;' bindtap='PreviewNotice'>
+        <image src="../../assets/1.jpg" style='width:{{windowWidth*0.94}}px;height:{{windowWidth*0.399}}px;' />
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

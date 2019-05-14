@@ -1,4 +1,6 @@
 // pages/create/field.js
+import Toast from '../../dist/toast/toast';
+
 Page({
 
   /**
@@ -7,10 +9,10 @@ Page({
   data: {
     notice:'请信息核对无误后提交,如信息有误请联系教务处电话888888',
   src:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1435353117,3471688688&fm=26&gp=0.jpg',
-  name:'张三',
+  name:'陈都灵',
   classId:101,
   className:'15软件2班',
-  studentId:'1507755'
+  studentId:'10086'
   },
 
   /**
@@ -27,6 +29,21 @@ Page({
       success: res => {
         that.setData({
           ImageBase64: res.data
+        })
+        console.log(res.data)
+      }
+    })
+    
+    wx.request({
+      url: 'http://192.168.199.101/student/info',
+      data: {
+        studentId: options.studentId
+      },
+      success: function (res) {
+        that.setData({
+          studentName: res.data.studentName,
+          className: res.data.className,
+          studentId: res.data.studentId
         })
         console.log(res.data)
       }
@@ -59,17 +76,26 @@ Page({
   },
   submit:function(){
     var that = this
-    wx.getLocation({
-      type: 'gcj02',
-      success(res) {
-        const latitude = res.latitude
-        const longitude = res.longitude
-        that.setData({
-          latitude: latitude,
-          longitude: longitude
+    Toast.loading({
+      mask: true,
+      message: '提交中...'
+    });
+    wx.request({
+      url: 'http://192.168.199.101/face/create',
+      data: {
+        base64: this.data.ImageBase64,
+        studentId: this.data.studentId,
+        classId: this.data.classId,
+        studentName: this.data.studentName
+      },
+      header: {},
+      method: 'POST',
+      dataType: 'json',
+      success: function (res) {
+        wx.navigateTo({
+          url: 'result?msg=' + res.data.msg + '&success=' + res.data.success,
         })
-        console.log(res)
-      }
+      },
     })
   }
 })

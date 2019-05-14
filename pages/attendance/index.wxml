@@ -3,7 +3,7 @@
     <van-notice-bar
   mode="closeable"
   text="{{notice}}"/>
-    <camera wx:if='{{CameraShow}}' class='verify-win' device-position="black" flash="off" binderror="error" style="width:{{windowWidth}}px; height:{{windowHeight*0.8}}px">
+    <camera wx:if='{{CameraShow}}' class='verify-win' device-position="front" flash="off" binderror="error" style="width:{{windowWidth}}px; height:{{windowHeight*0.8}}px">
     </camera>
     <view style='margin-top:20px;'>
       <van-row>

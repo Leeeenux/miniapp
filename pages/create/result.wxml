@@ -3,15 +3,27 @@
     <view style='margin-top:40px;'>
       <van-row>
         <van-col span="20" offset="6">
-          <image wx:if="{{status=='success'?true:false}}" style='width:{{windowWidth*0.5}}px;height:{{windowWidth*0.5}}px;' src='../../assets/success.png' />
+          <image wx:if="{{success=='true'}}" style='width:{{windowWidth*0.5}}px;height:{{windowWidth*0.5}}px;' src='../../assets/success.png' />
 
         </van-col>
         <van-col span="20" offset="6">
-          <image wx:if="{{status=='success'?false:true}}" style='width:{{windowWidth*0.5}}px;height:{{windowWidth*0.5}}px;' src='../../assets/fail.png' />
+          <image wx:if="{{success!='true'}}" style='width:{{windowWidth*0.5}}px;height:{{windowWidth*0.5}}px;' src='../../assets/fail.png' />
         </van-col>
       </van-row>
     </view>
-    <view style='margin-top:20px;text-align:center;font-size:24px;'>签到失败</view>
-    <view style='margin-top:20px;text-align:center;font-size:20px;'>人脸不匹配，图片中无人脸</view>
+    <view wx:if="{{success=='true'}}" style='margin-top:20px;text-align:center;font-size:24px;'>录入成功</view>
+    <view wx:if="{{success!='true'}}">
+      <view style='margin-top:20px;text-align:center;font-size:24px;'>录入失败</view>
+
+    </view>
+    <view style='margin-top:20px;text-align:center;font-size:20px;'>{{msg}}</view>
+  </view>
+  <view style='margin-top:20px;'>
+    <van-row>
+      <van-col span="16" offset="4">
+        <van-button wx:if="{{success=='true'}}" style='height:50px' class='verify-btn' type="info" size="large" bindtap='homepage'>返回首页</van-button>
+        <van-button wx:if="{{success!='true'}}" style='height:50px' class='verify-btn' type="info" size="large" bindtap='remake'>返回重试</van-button>
+      </van-col>
+    </van-row>
   </view>
 </view>

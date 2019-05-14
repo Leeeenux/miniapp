@@ -9,7 +9,6 @@
     "van-radio-group": "/dist/radio-group/index",
     "van-panel": "/dist/panel/index",
     "van-row": "/dist/row/index",
-    "van-col": "/dist/col/index",
-    "van-toast": "/dist/toast/index"
+    "van-col": "/dist/col/index"
   }
 }

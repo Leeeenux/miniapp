@@ -2,8 +2,7 @@
 <van-toast id="van-toast" />
 <view class='login-box'>
   <view style='margin-top:20px;'>
-    <image src='../../assets/logo.gif'></image>
-    居中还没处理
+    <image style='width:{{windowWidth*0.8}}px;height:{{windowWidth*0.6}}px;margin-left:{{windowWidth*0.1}}px;' src='../../assets/logo.gif'></image>
   </view>
   <view style='margin-top:20px;'>
     <van-row>

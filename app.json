@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/index/login",
     "pages/index/home",
     "pages/attendance/index",
     "pages/face/index",
@@ -11,7 +11,7 @@
     "pages/create/alert",
     "pages/create/field",
     "pages/location/index",
-    "pages/index/login"
+    "pages/weixin/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

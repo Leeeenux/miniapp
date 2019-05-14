@@ -1,4 +1,5 @@
 // pages/index/home.js
+const app = getApp()
 Page({
 
   /**
@@ -12,54 +13,38 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    wx.request({
+      url: 'http://192.168.199.101/student/info',
+      data: {
+        studentId: options.studentId
+      },
+      success: function (res) {
+        that.setData({
+          studentName: res.data.studentName,
+          className: res.data.className,
+          studentId: res.data.studentId,
+          classId: res.data.classId
+        })
+        console.log(res.data)
+      }
+    })
+    that.setData({
+      windowWidth: app.globalData.windowWidth,
+      windowHeight: app.globalData.windowHeight
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  faceClick(){
+    wx.navigateTo({
+      url: '/pages/create/index?studentId=' + this.data.studentId
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  atdClick(){
+   
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  signClick(){
+    wx.navigateTo({
+      url: '/pages/attendance/index?studentId=' + this.data.studentId + '&classId=' + this.data.classId
+    })
   }
 })

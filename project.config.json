@@ -39,13 +39,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 4,
 			"list": [
 				{
 					"id": 0,
 					"name": "签到页面",
 					"pathName": "pages/attendance/index",
-					"query": "studentId=1507052316&classId=101",
+					"query": "studentId=1021&classId=101",
 					"scene": null
 				},
 				{
@@ -58,8 +58,8 @@
 				{
 					"id": 2,
 					"name": "录入",
-					"pathName": "pages/create/field",
-					"query": "",
+					"pathName": "pages/create/index",
+					"query": "studentId=1021",
 					"scene": null
 				},
 				{
@@ -67,6 +67,13 @@
 					"name": "录入",
 					"pathName": "pages/create/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "首页",
+					"pathName": "pages/index/home",
+					"query": "studentId=1011",
 					"scene": null
 				}
 			]

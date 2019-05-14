@@ -1,7 +1,8 @@
 <van-notice-bar mode="closeable" text="{{notice}}" />
+<van-toast id="van-toast" />
 <van-cell-group>
   <view>
-    <van-field value="{{name}}" label="姓名" disabled left-icon="contact" border="{{ true }}" />
+    <van-field value="{{studentName}}" label="姓名" disabled left-icon="contact" border="{{ true }}" />
   </view>
   <view style='margin-top:10px;'>
     <van-field value="{{className}}" label="班级" disabled left-icon="friends-o" border="{{ true }}" />
@@ -25,11 +26,3 @@
     </view>
   </van-panel>
 </view>
-<van-cell-group>
-  <view>
-    <van-field value="{{longitude}}" label="姓名" disabled left-icon="contact" border="{{ true }}" />
-  </view>
-  <view>
-  <van-field value="{{latitude}}" label="姓名" disabled left-icon="contact" border="{{ true }}" />
-  </view>
-</van-cell-group>

@@ -1,10 +1,13 @@
 // pages/attendance/index.js
+const app = getApp()
 Page({
   data: {
     windowWidth: 0,
     windowHeight:0,
     CameraShow: false,
-    notice:'点击“一键签到”后请保持头部置于镜头中央保持3s不动'
+    notice:'点击“一键签到”后请保持头部置于镜头中央保持3s不动',
+    studentId:1001,
+    classId:101
   },
   onLoad: function (options){
     var that = this
@@ -21,14 +24,12 @@ Page({
         })
       }
     })
-    wx.getSystemInfo({
-      success(res) {
-        that.setData({
-          windowWidth:res.windowWidth,
-          windowHeight: res.windowHeight,
-          CameraShow:true
-        })
-      }
+    this.setData({
+      windowWidth: app.globalData.windowWidth,
+      windowHeight: app.globalData.windowHeight,
+      studentId: options.studentId,
+      classId: options.classId,
+      CameraShow: true
     })
   },
   takePhoto:function() {

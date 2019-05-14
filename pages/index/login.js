@@ -16,7 +16,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    console.log(app.globalData)
+    this.setData({
+      windowWidth: app.globalData.windowWidth,
+      windowHeight: app.globalData.windowHeight
+    })
   },
   getUserInfo: function (e) {
     console.log(e)
@@ -53,7 +57,7 @@ Page({
               data: that.data.username,
               success: function (res) {
                 wx.redirectTo({
-                  url: 'home'
+                  url: 'home?studentId=' + that.data.username
                 })
               }
             })
