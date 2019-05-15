@@ -10,7 +10,7 @@
     <image style='width:{{windowWidth*0.455}}px;height:{{windowWidth*0.255}}px;margin-left:{{windowWidth*0.03}}px;border-radius:5px;' src='../../assets/luru.png' bindtap='faceClick'></image>
   </view>
   <view style='margin-top:10px;'>
-    <image style='width:{{windowWidth*0.455}}px;height:{{windowWidth*0.255}}px;margin-left:{{windowWidth*0.03}}px;border-radius:5px;' src='../../assets/qingjia.png' bindtap='atdClick'></image>
+    <image style='width:{{windowWidth*0.455}}px;height:{{windowWidth*0.255}}px;margin-left:{{windowWidth*0.03}}px;border-radius:5px;' src='../../assets/qingjia.png' bindtap='leaveClick'></image>
     <image style='width:{{windowWidth*0.455}}px;height:{{windowWidth*0.255}}px;margin-left:{{windowWidth*0.03}}px;border-radius:5px;' src='../../assets/chaxun.png' bindtap='faceClick'></image>
   </view>
   <view style='margin-top:10px;'>

@@ -10,8 +10,8 @@ Page({
   },
   onLoad(options){
     var that = this
-    console.log()
     this.ctx = wx.createCameraContext()
+    console.log(options.studentId)
     this.setData({
       windowWidth: app.globalData.windowWidth,
       windowHeight: app.globalData.windowHeight,

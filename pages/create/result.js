@@ -29,7 +29,9 @@ Page({
     })
   },
   homepage:function(){
-
+    wx.redirectTo({
+      url: '/pages/leave/index?studentId=' + this.data.studentId,
+    })
   },
   remake:function(){
     wx.navigateBack({

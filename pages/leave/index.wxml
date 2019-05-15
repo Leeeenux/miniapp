@@ -1,0 +1,41 @@
+<van-notice-bar mode="closeable" text="请完整填写请假申请表" />
+<van-toast id="van-toast" />
+<van-cell-group>
+  <view>
+    <van-field value="{{studentName}}" label="姓名" disabled left-icon="contact" border="{{ true }}" />
+  </view>
+  <view style='margin-top:10px;'>
+    <van-field value="{{className}}" label="班级" disabled left-icon="friends-o" border="{{ true }}" />
+  </view>
+  <view style='margin-top:10px;'>
+    <van-field value="{{studentId}}" label="学号" disabled left-icon="manager-o" border="{{ true }}" />
+  </view>
+  <view style='margin-top:10px;'>
+    <van-field value="{{StartDate}}" label="开始时间" left-icon="clock-o" border="{{ true }}" bindtap='start' disabled/>
+  </view>
+  <!-- <view style='margin-top:10px;'>
+    <van-field value="{{endDate}}" label="结束时间" left-icon="clock-o" border="{{ true }}" bindtap='end'/>
+  </view> -->
+  <view style='margin-top:10px;'>
+    <van-field value='{{content}}' label="请假理由"  left-icon="label-o" border="{{ true }}" />
+  </view>
+</van-cell-group>
+<view style='margin-top:20px;'>
+  <van-row gutter="14">
+    <van-col span="10" offset="2">
+      <van-button size="large" bindtap='submit' type="primary">提交</van-button>
+    </van-col>
+    <van-col span="10">
+      <van-button size="large" bindtap='remake'>重置</van-button>
+    </van-col>
+  </van-row>
+</view>
+<van-datetime-picker 
+type="datetime" 
+value="{{ currentDate }}" 
+min-date="{{ minDate }}" 
+max-date="{{ maxDate }}" 
+bind:input="onStartInput" 
+bind:confirm="startConfirm"
+wx:if="{{startShow}}"
+/>

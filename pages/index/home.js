@@ -15,7 +15,7 @@ Page({
   onLoad: function (options) {
     var that = this
     wx.request({
-      url: 'http://192.168.199.101/student/info',
+      url: 'http://192.168.199.101/wechat/info',
       data: {
         studentId: options.studentId
       },
@@ -39,8 +39,10 @@ Page({
       url: '/pages/create/index?studentId=' + this.data.studentId
     })
   },
-  atdClick(){
-   
+  leaveClick(){
+    wx.navigateTo({
+      url: '/pages/leave/index?studentId=' + this.data.studentId
+    })
   },
   signClick(){
     wx.navigateTo({

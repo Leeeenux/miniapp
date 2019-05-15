@@ -35,7 +35,7 @@ Page({
     })
     
     wx.request({
-      url: 'http://192.168.199.101/student/info',
+      url: 'http://192.168.199.101/wechat/info',
       data: {
         studentId: options.studentId
       },

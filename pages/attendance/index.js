@@ -45,7 +45,7 @@ Page({
           success: res => { //成功的回调
             // console.log('data:image/png;base64,' + res.data)
             wx.request({
-              url: 'http://192.168.199.101/face/signin',
+              url: 'http://192.168.199.101/wechat/signin',
               data: {
                 base64: res.data,
                 studentId: this.data.studentId,

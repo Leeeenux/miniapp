@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "van-button": "/dist/button/index",
+    "van-field": "/dist/field/index",
+    "van-cell": "/dist/cell/index",
+    "van-cell-group": "/dist/cell-group/index",
+    "van-notice-bar": "/dist/notice-bar/index",
+    "van-radio": "/dist/radio/index",
+    "van-radio-group": "/dist/radio-group/index",
+    "van-panel": "/dist/panel/index",
+    "van-row": "/dist/row/index",
+    "van-col": "/dist/col/index",
+    "van-datetime-picker": "/dist/datetime-picker/index",
+    "van-toast": "/dist/toast/index"
+  }
+}
