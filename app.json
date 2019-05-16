@@ -10,9 +10,9 @@
     "pages/create/result",
     "pages/create/alert",
     "pages/create/field",
-    "pages/location/index",
     "pages/weixin/test",
-    "pages/leave/index"
+    "pages/leave/index",
+    "pages/record/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

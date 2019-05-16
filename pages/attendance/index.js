@@ -3,13 +3,13 @@ const app = getApp()
 Page({
   data: {
     windowWidth: 0,
-    windowHeight:0,
+    windowHeight: 0,
     CameraShow: false,
-    notice:'点击“一键签到”后请保持头部置于镜头中央保持3s不动',
-    studentId:1001,
-    classId:101
+    notice: '点击“一键签到”后请保持头部置于镜头中央保持3s不动',
+    studentId: 1001,
+    classId: 101
   },
-  onLoad: function (options){
+  onLoad: function(options) {
     var that = this
     console.log(options)
     this.ctx = wx.createCameraContext()
@@ -17,10 +17,10 @@ Page({
       type: 'wgs84',
       success(res) {
         that.setData({
-          latitude : res.latitude,
-          longitude : res.longitude,
-          studentId: options.studentId,
-          classId: options.classId
+          latitude: res.latitude,
+          longitude: res.longitude,
+          studentId: app.globalData.studentId,
+          classId: app.globalData.classId
         })
       }
     })
@@ -32,7 +32,7 @@ Page({
       CameraShow: true
     })
   },
-  takePhoto:function() {
+  takePhoto: function() {
     var msg = ''
     var IsMatch = false
 
@@ -47,7 +47,7 @@ Page({
             wx.request({
               url: 'http://192.168.199.101/wechat/signin',
               data: {
-                base64: res.data,
+                // base64: res.data,
                 studentId: this.data.studentId,
                 classId: this.data.classId,
                 longitude: this.data.longitude,
@@ -71,19 +71,19 @@ Page({
       }
     })
   },
-  SignClick:function(){
+  SignClick: function() {
     var that = this
     that.setData({
-      isLoading:true,
-      notice:'人脸识别中……请保持不动'
+      isLoading: true,
+      notice: '人脸识别中……请保持不动'
     })
-    setTimeout(function (){//延时三秒钟拍摄
+    setTimeout(function() { //延时三秒钟拍摄
       that.takePhoto()
       that.setData({
         isLoading: false,
         notice: '点击“一键签到”后请保持头部置于镜头中央保持3s不动'
       })
     }, 3000);
-    
+
   }
 })

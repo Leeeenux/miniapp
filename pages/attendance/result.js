@@ -28,8 +28,10 @@ Page({
       }
     })
   },
-  homepage:function(){
-
+  homepage: function () {
+    wx.navigateTo({
+      url: '/pages/index/home?studentId=' + this.data.studentId,
+    })
   },
   remake:function(){
     wx.navigateBack({

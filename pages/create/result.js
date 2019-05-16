@@ -28,9 +28,9 @@ Page({
       }
     })
   },
-  homepage:function(){
-    wx.redirectTo({
-      url: '/pages/leave/index?studentId=' + this.data.studentId,
+  homepage: function () {
+    wx.navigateTo({
+      url: '/pages/index/home?studentId=' + this.data.studentId,
     })
   },
   remake:function(){

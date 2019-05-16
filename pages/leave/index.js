@@ -1,6 +1,6 @@
 // pages/weixin/test.js
 import Toast from '../../dist/toast/toast';
-
+const app = getApp()
 Page({
 
   /**
@@ -23,20 +23,11 @@ Page({
    */
   onLoad: function(options) {
     var that = this
-    wx.request({
-      url: 'http://192.168.199.101/wechat/info',
-      data: {
-        studentId: options.studentId
-      },
-      success: function (res) {
-        that.setData({
-          studentName: res.data.studentName,
-          className: res.data.className,
-          studentId: res.data.studentId,
-          classId: res.data.classId
-        })
-        console.log(res.data)
-      }
+    that.setData({
+      studentId: app.globalData.studentId,
+      studentName: app.globalData.studentName,
+      className: app.globalData.className,
+      classId: app.globalData.classId
     })
   },
 

@@ -52,10 +52,17 @@ Page({
         success(res) {
           if (res.data.success) {
             Toast.success(res.data.msg);
-            wx.setStorage({
-              key: 'studentId',//查看缓存里是否有studentId
-              data: that.data.username,
+            wx.request({
+              url: 'http://192.168.199.101/wechat/info',
+              data: {
+                studentId: that.data.username
+              },
               success: function (res) {
+                app.globalData.studentId = res.data.studentId
+                app.globalData.studentName = res.data.studentName
+                app.globalData.className = res.data.className
+                app.globalData.classId = res.data.classId
+                console.log(res.data)
                 wx.redirectTo({
                   url: 'home?studentId=' + that.data.username
                 })

@@ -14,22 +14,12 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    wx.request({
-      url: 'http://192.168.199.101/wechat/info',
-      data: {
-        studentId: options.studentId
-      },
-      success: function (res) {
-        that.setData({
-          studentName: res.data.studentName,
-          className: res.data.className,
-          studentId: res.data.studentId,
-          classId: res.data.classId
-        })
-        console.log(res.data)
-      }
-    })
+    var studentId = options.studentId
     that.setData({
+      studentName: app.globalData.studentId,
+      className: app.globalData.className,
+      studentId: app.globalData.studentId,
+      classId: app.globalData.classId,
       windowWidth: app.globalData.windowWidth,
       windowHeight: app.globalData.windowHeight
     })
@@ -48,5 +38,13 @@ Page({
     wx.navigateTo({
       url: '/pages/attendance/index?studentId=' + this.data.studentId + '&classId=' + this.data.classId
     })
+  },
+  recordClick() {
+    wx.navigateTo({
+      url: '/pages/record/index?studentId=' + this.data.studentId
+    })
+  },
+  click(){
+    console.log(getApp().globalData)
   }
 })

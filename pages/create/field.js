@@ -1,26 +1,30 @@
 // pages/create/field.js
 import Toast from '../../dist/toast/toast';
-
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    notice:'请信息核对无误后提交,如信息有误请联系教务处电话888888',
-  src:'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1435353117,3471688688&fm=26&gp=0.jpg',
-  name:'陈都灵',
-  classId:101,
-  className:'15软件2班',
-  studentId:'10086'
+    notice: '请信息核对无误后提交,如信息有误请联系教务处电话888888',
+    src: '',
+    studentName: '',
+    classId: '',
+    className: '',
+    studentId: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var that = this
     that.setData({
+      studentId: app.globalData.studentId,
+      studentName: app.globalData.studentName,
+      className: app.globalData.className,
+      classId: app.globalData.classId,
       src: options.src
     })
     wx.getFileSystemManager().readFile({
@@ -33,23 +37,23 @@ Page({
         console.log(res.data)
       }
     })
-    
-    wx.request({
-      url: 'http://192.168.199.101/wechat/info',
-      data: {
-        studentId: options.studentId
-      },
-      success: function (res) {
-        that.setData({
-          studentName: res.data.studentName,
-          className: res.data.className,
-          studentId: res.data.studentId
-        })
-        console.log(res.data)
-      }
-    })
-  }, 
-  ImageOnload:function(e){
+
+    // wx.request({
+    //   url: 'http://192.168.199.101/wechat/info',
+    //   data: {
+    //     studentId: this.data.studentId
+    //   },
+    //   success: function (res) {
+    //     that.setData({
+    //       studentName: res.data.studentName,
+    //       className: res.data.className,
+    //       studentId: res.data.studentId
+    //     })
+    //     console.log(res.data)
+    //   }
+    // })
+  },
+  ImageOnload: function(e) {
     var that = this
     var windowWidth
     wx.getSystemInfo({
@@ -57,7 +61,7 @@ Page({
         windowWidth = res.windowWidth
       }
     })
-    var ImageWidth = windowWidth*0.5
+    var ImageWidth = windowWidth * 0.5
     var scale = e.detail.width / e.detail.height
     var ImageHeight = ImageWidth / scale
     that.setData({
@@ -69,12 +73,12 @@ Page({
     console.log(e.detail)
     console.log(ImageHeight)
   },
-  remake:function(){
+  remake: function() {
     wx.navigateBack({
-      url:'index'
+      url: 'index'
     })
   },
-  submit:function(){
+  submit: function() {
     var that = this
     Toast.loading({
       mask: true,
@@ -91,7 +95,7 @@ Page({
       header: {},
       method: 'POST',
       dataType: 'json',
-      success: function (res) {
+      success: function(res) {
         wx.navigateTo({
           url: 'result?msg=' + res.data.msg + '&success=' + res.data.success,
         })
